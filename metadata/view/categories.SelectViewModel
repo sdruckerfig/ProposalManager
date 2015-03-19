@@ -1,0 +1,71 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "categoriesselect",
+        "designer|userClassName": "categories.SelectViewModel"
+    },
+    "designerId": "00e17a66-d5a0-4d5e-b00a-dc50f75d9d4b",
+    "cn": [
+        {
+            "type": "Ext.data.TreeStore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "TaxonomyTerm",
+                "name": "TaxonomyTerms",
+                "root": [
+                    "{ ",
+                    " name: 'Root',",
+                    " expanded: false",
+                    "}",
+                    "  "
+                ]
+            },
+            "name": "MyTreeStore1",
+            "designerId": "6fb93542-3bcf-4404-8515-0fb9172d01e2",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Rest",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "appendId": false,
+                        "extraParams": [
+                            "{",
+                            " checkboxes: true",
+                            "}"
+                        ],
+                        "format": "json",
+                        "url": "/rest/ProposalManager/Taxonomy",
+                        "withCredentials": true
+                    },
+                    "name": "MyRestProxy2",
+                    "designerId": "34e820af-1c22-4c5b-b4db-118a4b02ecec",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyJsonReader1",
+                            "designerId": "1b17a5d0-40ae-4eb2-bd39-5f28ec3b62ee"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,351 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Main",
+        "views": [
+            "admin.companies.Companies"
+        ]
+    },
+    "name": "MyController",
+    "designerId": "d18714af-6c5f-44a4-9c99-ac7041337d01",
+    "cn": [
+        {
+            "type": "Ext.app.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onHome",
+                "implHandler": [
+                    "this.getViewport().removeAll();",
+                    "Ext.widget('login');"
+                ],
+                "url": "home"
+            },
+            "name": "onHome",
+            "designerId": "7e1acfba-3bb2-40ae-8b44-1a59b9d2b141"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "viewport",
+                "selector": "viewport"
+            },
+            "name": "viewport",
+            "designerId": "21666442-032d-458c-9b11-8ee0d860558a"
+        },
+        {
+            "type": "Ext.app.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMain",
+                "implHandler": [
+                    "if (!this.getMain()) {",
+                    "    this.getViewport().add({",
+                    "        xtype: 'main',",
+                    "        region: 'center'",
+                    "    });",
+                    "}"
+                ],
+                "url": "main"
+            },
+            "name": "onMain",
+            "designerId": "b149442a-e0cb-4506-bb0f-7c79d2eb5b05",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "action"
+                        ],
+                        "fn": "before",
+                        "implHandler": [
+                            "this.onAuthenticate(action);"
+                        ]
+                    },
+                    "name": "before",
+                    "designerId": "82791050-e33a-4686-be0b-56c89acd9549"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "action"
+                ],
+                "fn": "onAuthenticate",
+                "implHandler": [
+                    "if (sessionStorage.getItem('userName')) {",
+                    "    var vm = this.getViewport().getViewModel();",
+                    "    vm.set('userName',sessionStorage.getItem('userName'));",
+                    "    vm.set('userRole',sessionStorage.getItem('userRole'));",
+                    "    action.resume();",
+                    "} else {",
+                    "",
+                    "    Ext.widget('login', {",
+                    "        action: action",
+                    "    });",
+                    "}"
+                ]
+            },
+            "name": "onAuthenticate",
+            "designerId": "c0c7a98e-218b-4443-9816-7450f46e1f89"
+        },
+        {
+            "type": "Ext.app.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLogout",
+                "implHandler": [
+                    "sessionStorage.clear();",
+                    "var vm = this.getViewport().getViewModel();",
+                    "vm.set('userName',null);",
+                    "vm.set('userRole',null);",
+                    "Ext.Ajax.request({",
+                    "    url: '/rest/ProposalManager/Auth.json',",
+                    "    method: 'DELETE',",
+                    "    withCredentials: true,",
+                    "    success: function() {",
+                    "        // no operation",
+                    "    },",
+                    "    failure: function() {",
+                    "        Ext.Msg.alert(\"Error\",\"An Error Occurred. Please try again later\");",
+                    "    }",
+                    "});",
+                    "",
+                    "",
+                    "this.redirectTo('home');",
+                    ""
+                ],
+                "url": "logout"
+            },
+            "name": "onLogout",
+            "designerId": "e02ddff8-a6cb-49a7-8db5-f5e466670977"
+        },
+        {
+            "type": "Ext.app.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "xtype"
+                ],
+                "fn": "onAdminAction",
+                "implHandler": [
+                    "this.onMain();",
+                    "Ext.widget(xtype);",
+                    ""
+                ],
+                "url": "admin/:xtype"
+            },
+            "name": "onAdminAction",
+            "designerId": "28290a5c-d066-4792-9526-f246470ec593",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "xtype",
+                            "action"
+                        ],
+                        "fn": "before",
+                        "implHandler": [
+                            " this.onAuthenticate(action);"
+                        ]
+                    },
+                    "name": "before",
+                    "designerId": "71ad10b9-493c-48e3-a511-2cfda44e6f8d"
+                }
+            ]
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "main",
+                "selector": "main"
+            },
+            "name": "main",
+            "designerId": "0057414c-f317-4eed-bb29-1ed85c09940f"
+        },
+        {
+            "type": "Ext.app.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id"
+                ],
+                "fn": "onEditAsset",
+                "implHandler": [
+                    "this.onMain();",
+                    "Ext.widget('editasset',{",
+                    "    assetId: id",
+                    "});"
+                ],
+                "url": "editasset/:id"
+            },
+            "name": "onEditAsset",
+            "designerId": "07540338-ad03-4af1-853c-b9a84fa44286",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "id",
+                            "action"
+                        ],
+                        "fn": "before",
+                        "implHandler": [
+                            "this.onAuthenticate(action);"
+                        ]
+                    },
+                    "name": "before",
+                    "designerId": "764465a9-4f10-4b13-b25c-ce64371ec515"
+                }
+            ]
+        },
+        {
+            "type": "Ext.app.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id"
+                ],
+                "fn": "onViewAsset",
+                "implHandler": [
+                    "this.onMain();",
+                    "this.getAssetViewer().setAssetId(id);"
+                ],
+                "url": "viewasset/:id"
+            },
+            "name": "onViewAsset",
+            "designerId": "d21bbf9f-8724-47b1-b4d7-a42ff6b697f6",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "id",
+                            "action"
+                        ],
+                        "fn": "before",
+                        "implHandler": [
+                            "this.onAuthenticate(action);"
+                        ]
+                    },
+                    "name": "before",
+                    "designerId": "5d165be9-2672-471d-8df6-e326f3312df9"
+                }
+            ]
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "assetViewer",
+                "selector": "assetviewer"
+            },
+            "name": "assetViewer",
+            "designerId": "2cb84592-7d63-426f-8e7d-a063d8966c18"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "window",
+                "designer|targetType": "asset.Editor",
+                "fn": "onAssetAfterSave",
+                "implHandler": [
+                    "this.getAssetBrowser().getViewModel().getStore('ProposalAssets').load();"
+                ],
+                "name": "aftersave",
+                "scope": "me"
+            },
+            "name": "onAssetAfterSave",
+            "designerId": "3ecaf008-06cb-4dad-9691-686754d7da28"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "assetBrowser",
+                "selector": "assetbrowser"
+            },
+            "name": "assetBrowser",
+            "designerId": "55bd1394-6589-49e6-a358-6a05bb2566e1"
+        }
+    ]
+}

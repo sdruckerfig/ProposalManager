@@ -1,0 +1,65 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{selectedRecord: null}"
+        ],
+        "designer|userAlias": "assetbrowser",
+        "designer|userClassName": "asset.BrowserViewModel"
+    },
+    "designerId": "11c30817-aca2-4432-a7d0-a3f90b8601e9",
+    "cn": [
+        {
+            "type": "Ext.data.BufferedStore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoLoad": true,
+                "model": "ProposalAsset",
+                "name": "ProposalAssets"
+            },
+            "name": "MyBufferedStore",
+            "designerId": "b419dad4-a531-40b0-b133-0dcb1e112990",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Rest",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "format": "json",
+                        "url": "/rest/ProposalManager/Assets",
+                        "withCredentials": true
+                    },
+                    "name": "MyRestProxy6",
+                    "designerId": "a03e7b8f-0d21-439b-bc16-6a405698e6c5",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "rootProperty": "records"
+                            },
+                            "name": "MyJsonReader5",
+                            "designerId": "34aef91f-056a-4102-a40d-73e7ec304f6d"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

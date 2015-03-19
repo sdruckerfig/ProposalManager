@@ -1,0 +1,52 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "Main"
+        ],
+        "defaultToken": "home",
+        "models": [
+            "ProposalAsset",
+            "Company",
+            "User",
+            "TaxonomyTerm",
+            "Client",
+            "Tag"
+        ],
+        "name": "ProposalManager",
+        "requires": [
+            "Ext.ux.form.TinyMCETextArea",
+            "Shared.overrides.patches.data.writer.Writer"
+        ],
+        "stores": [
+            "Roles",
+            "Companies",
+            "AssetTypes",
+            "Clients",
+            "Tags"
+        ],
+        "views": [
+            "categories.Select",
+            "asset.Editor",
+            "categories.Edit",
+            "login.Login",
+            "main.Viewport",
+            "asset.Browser",
+            "main.Toolbar",
+            "admin.users.Users",
+            "ux.TinyMce2",
+            "admin.clients.Clients",
+            "asset.Viewer",
+            "asset.SearchForm",
+            "admin.tags.Tags",
+            "analytics.Analytics"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

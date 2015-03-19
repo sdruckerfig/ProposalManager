@@ -1,0 +1,4 @@
+# ext-theme-crisp-94478fc3-8c6c-4daa-8811-4acbdb6069c4/sass/src
+
+This folder contains SASS sources that mimic the component-class hierarchy. These files
+are gathered in to a build of the CSS based on classes that are used by the build.

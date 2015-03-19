@@ -1,0 +1,123 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "assetviewer",
+        "designer|userClassName": "asset.ViewerViewController",
+        "requires": [
+            "Ext.ux.panel.PDF",
+            "Ext.ux.imageviewer.ImageViewer",
+            "Ext.ux.IFrame"
+        ]
+    },
+    "designerId": "54bc9ff3-71df-439c-913e-645da197afe6",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id"
+                ],
+                "fn": "loadAsset",
+                "implHandler": [
+                    "",
+                    "",
+                    "var me = this;",
+                    "if (id && id > 0) {",
+                    "",
+                    "    var view = this.getView();",
+                    "    view.removeAll();",
+                    "    view.setLoading(true);",
+                    "    ProposalManager.model.ProposalAsset.load(id, {",
+                    "        withCredentials: true,",
+                    "        success: function(rec) {",
+                    "            me.getViewModel().set('selectedRecord', rec);",
+                    "            me.deployViewer(rec);",
+                    "            view.setLoading(false);",
+                    "        },",
+                    "        failure: function(rec) {",
+                    "            view.setLoading(false);",
+                    "            Ext.Msg.alert(\"Failed\",\"Failed to retrieve asset\");",
+                    "        }",
+                    "    });",
+                    "}"
+                ]
+            },
+            "name": "loadAsset",
+            "designerId": "508b439b-f3d7-4a2e-abc7-59fe6c816155"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "rec"
+                ],
+                "fn": "deployViewer",
+                "implHandler": [
+                    "var view = this.getView();",
+                    "view.removeAll();",
+                    "view.update(null);",
+                    "if (!Ext.isEmpty(rec.get('fileurl'))) {",
+                    "    var fileExt =  rec.get('fileurl').split('.').pop();",
+                    "    switch(fileExt) {",
+                    "        case 'pdf' :",
+                    "",
+                    "            view.add({",
+                    "                xtype: 'pdfpanel',",
+                    "                title: rec.get('title'),",
+                    "                pageScale: 1,",
+                    "                src: rec.get('fileurl'),",
+                    "                header: false",
+                    "            });",
+                    "            break;",
+                    "        case 'jpg' :",
+                    "        case 'png' :",
+                    "        case 'gif' :",
+                    "            view.add(",
+                    "                {",
+                    "                    xtype: 'extimageviewer',",
+                    "                    title:  rec.get('title'),",
+                    "                    src: rec.get('fileurl'),",
+                    "                    header: false,",
+                    "                    imageTitle: rec.get('title')",
+                    "                });",
+                    "            break;",
+                    "        default:",
+                    "            view.add(",
+                    "                {",
+                    "                    xtype: 'uxiframe',",
+                    "                    src: rec.get('fileurl')",
+                    "                }",
+                    "            );",
+                    "    }",
+                    "} else if (!Ext.isEmpty(rec.get('contenturl'))) {",
+                    "    view.add(",
+                    "        {",
+                    "            xtype: 'uxiframe',",
+                    "            src: rec.get('contenturl')",
+                    "        }",
+                    "    );",
+                    "} else if (!Ext.isEmpty(rec.get('fullcontent'))) {",
+                    "    view.update('<div style=\"padding: 10px\">' + rec.get('fullcontent') + '</div>');",
+                    "}"
+                ]
+            },
+            "name": "deployViewer",
+            "designerId": "945ed679-2a99-4c67-a709-6be1c8c0e960"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "categoriesselect",
+        "designer|userClassName": "categories.SelectViewController"
+    },
+    "designerId": "e5c272ed-d321-4edc-b5b4-3b852874d93e"
+}

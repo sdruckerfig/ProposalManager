@@ -1,0 +1,112 @@
+[
+    {
+        "loaded": true,
+        "text": "Client Type",
+        "id": "clienttypes",
+        "leaf": false,
+        "checked": false,
+        "children": [
+            {
+                "text": "Commercial",
+                "leaf": true,
+                "checked": false
+            },
+            {
+                "text": "Education",
+                "leaf": false,
+                "checked": false,
+                "children": [
+                    {
+                        "text": "K-12",
+                        "leaf": true,
+                        "checked": false
+                    },
+                    {
+                        "text": "Higher Ed.",
+                        "leaf": true,
+                        "checked": false
+                    }
+                ]
+            },
+            {
+                "text": "Government",
+                "leaf": "false",
+                "checked": false,
+                "children": [
+                    {
+                        "text": "State",
+                        "leaf": true
+                    },
+                    {
+                        "text": "Federal (Civ)",
+                        "leaf": true
+                    },
+                    {
+                        "text": "Federal (DOD)",
+                        "leaf": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "loaded": true,
+        "text": "Technologies",
+        "id": "technologies",
+        "leaf": false,
+        "checked": false,
+        "children": [
+            {
+                "text": "Adobe",
+                "children": [
+                    {
+                        "text": "ColdFusion",
+                        "leaf": true
+                    },
+                    {
+                        "text": "Connect",
+                        "leaf": true
+                    }
+                ]
+            },
+            {
+                "text": "Sencha",
+                "leaf" : "false",
+                "checked" : false,
+                "children": [
+                    {
+                        "text": "Ext JS",
+                        "checked" : false,
+                        "leaf": true
+                    },
+                    {
+                        "text": "Sencha Touch",
+                        "checked" : false,
+                        "leaf": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "loaded": true,
+        "text": "Verticals",
+        "id": "verticals",
+        "leaf": false,
+        "checked": false,
+        "children": [
+            {
+                "text": "Content Management",
+                "leaf": true
+            },
+            {
+                "text": "Desktop Development",
+                "leaf": true
+            },
+            {
+                "text": "Mobile Development",
+                "leaf": true
+            }
+        ]
+    }
+]

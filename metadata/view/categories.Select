@@ -1,0 +1,80 @@
+{
+    "type": "Ext.tree.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "categoriesselect",
+        "designer|userClassName": "categories.Select",
+        "displayField": null,
+        "folderSort": true,
+        "hideHeaders": null,
+        "rootVisible": false,
+        "store": [
+            "{TaxonomyTerms}"
+        ],
+        "title": "Categories"
+    },
+    "name": "MyTreePanel",
+    "configAlternates": {
+        "scrollable": "boolean",
+        "store": "binding"
+    },
+    "designerId": "0b505c11-04a9-43ca-a92b-5f34d3bfc274",
+    "viewControllerInstanceId": "e5c272ed-d321-4edc-b5b4-3b852874d93e",
+    "viewModelInstanceId": "00e17a66-d5a0-4d5e-b00a-dc50f75d9d4b",
+    "cn": [
+        {
+            "type": "Ext.tree.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTreeView",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "123a98d6-7034-405c-be0b-9619b64c421f"
+        },
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "type": "refresh"
+            },
+            "name": "MyTool11",
+            "designerId": "5e2ba0ad-22eb-4b72-88f0-fbc8a36a4d42",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "owner",
+                            "tool",
+                            "event"
+                        ],
+                        "designer|viewControllerFn": "onRefresh",
+                        "fn": "callback",
+                        "implHandler": [
+                            "owner.getStore().load();"
+                        ]
+                    },
+                    "name": "callback",
+                    "designerId": "d0e462d3-11b8-4657-be30-163ca8ed65fd"
+                }
+            ]
+        }
+    ]
+}

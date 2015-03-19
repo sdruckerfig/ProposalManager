@@ -1,0 +1,123 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Company"
+    },
+    "name": "MyModel",
+    "designerId": "236a99bf-32a0-4c96-8624-f57c4fd65251",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyField7",
+            "designerId": "58eb79a4-d91c-49ad-a864-40a9070c3403"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "companyname"
+            },
+            "name": "MyField8",
+            "designerId": "f426b453-ffe5-42e0-b61b-28c1971e3dda"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "updateuser"
+            },
+            "name": "MyField9",
+            "designerId": "b247e5d1-cd40-44d8-915f-43b8c15391eb"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "m/d/Y H:i",
+                "name": "updatedate"
+            },
+            "name": "MyDate1",
+            "designerId": "b8f5c7d9-36fd-4f14-89d2-9411b9b1a7e2",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validations",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation",
+                    "designerId": "1f22f1cd-c6fb-4c9f-897a-9793833be02b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "format": "json",
+                "url": "/rest/ProposalManager/Companies",
+                "withCredentials": true
+            },
+            "name": "MyRestProxy1",
+            "designerId": "d28700c9-e267-485b-bb3f-724bf2bb111f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "records"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "45c1d107-875c-4daa-b09f-1c9f253fcecb"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter1",
+                    "designerId": "d1cb7c3e-c807-46ca-b036-68bc29802d52"
+                }
+            ]
+        }
+    ]
+}

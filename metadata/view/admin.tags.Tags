@@ -1,0 +1,386 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "designer|userAlias": "admintags",
+        "designer|userClassName": "admin.tags.Tags",
+        "height": 250,
+        "layout": "fit",
+        "modal": true,
+        "title": "Edit Tags",
+        "width": 400
+    },
+    "name": "admin.clients.Clients1",
+    "designerId": "1580e7e0-71af-4428-a06a-faef2dd80a67",
+    "viewControllerInstanceId": "f165c118-9442-4672-9191-4a1a5094f956",
+    "viewModelInstanceId": "131b215e-0e8a-45d7-9216-52bcf67984bc",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "header": false,
+                "reference": "grid",
+                "selection": [
+                    "{selectedRecord}"
+                ],
+                "store": "Tags",
+                "title": ""
+            },
+            "name": "MyGridPanel1",
+            "configAlternates": {
+                "selection": "binding"
+            },
+            "designerId": "f711997d-68b2-44e4-831e-dd689c99d2a0",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "text",
+                        "flex": 1,
+                        "text": "Label"
+                    },
+                    "name": "MyColumn2",
+                    "designerId": "23cd462b-5577-4b5c-9d8b-c215cce32432",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false
+                            },
+                            "name": "MyTextField3",
+                            "designerId": "af299c4c-7c34-4b97-a6d6-610abf363d19"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable",
+                    "designerId": "5e10c5f4-2171-42f6-b872-f26a17f5da7c"
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "pluginId": "editor"
+                    },
+                    "name": "MyRowEditingPlugin",
+                    "designerId": "de92aff0-10f0-4426-8e9c-e9cf2bd416c0",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRowEditingCancelEdit",
+                                "implHandler": [
+                                    "",
+                                    "\t\tvar rec = context.record;",
+                                    "\t\tif (rec.phantom) {",
+                                    "\t\t\tcontext.grid.getStore().remove(rec);",
+                                    "\t\t}"
+                                ],
+                                "name": "canceledit",
+                                "scope": "me"
+                            },
+                            "name": "onRowEditingCancelEdit",
+                            "designerId": "f0694890-620e-44b6-aff6-08e3c7f4a3df"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRowEditingEdit",
+                                "implHandler": [
+                                    "        var rec = context.record;",
+                                    "        var me = this;",
+                                    "",
+                                    "\t\trec.save({",
+                                    "\t\t\tsuccess: function(record, operation) {",
+                                    "",
+                                    "\t\t\t\tif (operation.action == 'create') {",
+                                    "\t\t\t\t\tvar pk = Ext.decode(operation.getResponse().responseText).id;",
+                                    "\t\t\t\t\trecord.set('id', pk);",
+                                    "\t\t\t\t}",
+                                    "\t\t\t\trecord.set('updatedate', new Date());",
+                                    "\t\t\t\trecord.set('updateuser', sessionStorage.getItem('userName'));",
+                                    "",
+                                    "\t\t\t\trecord.commit();",
+                                    "                me.lookupReference('statusToolbar').getEl().highlight();",
+                                    "\t\t\t},",
+                                    "\t\t\tfailure: function(record, operation) {",
+                                    "\t\t\t\tExt.Msg.alert('Operation failed', \"Please try again later.\");",
+                                    "",
+                                    "\t\t\t}",
+                                    "\t\t});"
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "name": "onRowEditingEdit",
+                            "designerId": "e5bef2a3-4d60-4cc0-b503-8c222b746163"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "reference": "statusToolbar"
+                    },
+                    "name": "MyToolbar1",
+                    "designerId": "27c925a3-3c7d-47d3-8cc6-850e2c6be44e",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.TextItem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 20,
+                                "html": [
+                                    "{recordStatus}"
+                                ],
+                                "layout|flex": 1
+                            },
+                            "name": "MyTextItem1",
+                            "configAlternates": {
+                                "html": "binding"
+                            },
+                            "designerId": "ba742af8-4097-4f0b-b15c-d9b0d1dbf235"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "btnAddRecord",
+                "tooltip": "Add Tag",
+                "type": "plus"
+            },
+            "name": "MyTool4",
+            "designerId": "fd1c2ccb-fd23-48c7-8f0d-110014e3ad21",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onAddRecord",
+                        "implHandler": [
+                            "\t\tvar grid = this.lookupReference('grid');",
+                            "\t\tvar gridStore = grid.getStore();",
+                            "\t\tvar rec = Ext.create(gridStore.model, {});",
+                            "\t\tvar rowEditor = grid.editingPlugin;",
+                            "\t\trowEditor.cancelEdit();",
+                            "\t\tgridStore.insert(0, rec);",
+                            "\t\trowEditor.startEdit(rec, 0);",
+                            ""
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onAddRecord",
+                    "designerId": "7a335a4a-47aa-4579-ac9b-9b57457e2649"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "btnDeleteRecord",
+                "disabled": [
+                    "{!selectedRecord}"
+                ],
+                "tooltip": "Delete Tag",
+                "type": "minus"
+            },
+            "name": "MyTool5",
+            "configAlternates": {
+                "disabled": "binding"
+            },
+            "designerId": "b403cb4e-f988-4a8b-8ed2-3c882f88e41f",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onDeleteRecord",
+                        "implHandler": [
+                            "var grid = this.lookupReference('grid');",
+                            "\t\tvar gridStore = grid.getStore();",
+                            "\t\tvar rowEditor = grid.editingPlugin;",
+                            "\t\tvar sm = grid.getSelectionModel();",
+                            "\t\tvar selections = grid.getSelectionModel().getSelection();",
+                            "",
+                            "\t\tvar labels = Ext.Array.pluck(selections, 'data.label');",
+                            "",
+                            "\t\tExt.Msg.confirm(",
+                            "\t\t\t\"Delete \" + Ext.util.Format.plural(selections.length, \"Record\"),",
+                            "\t\t\t\"Delete \" + Ext.util.Format.plural(selections.length, \" record?\", \" records?\"),",
+                            "\t\t\tfunction(b) {",
+                            "",
+                            "\t\t\t\tgrid.setLoading(true);",
+                            "\t\t\t\trowEditor.cancelEdit();",
+                            "",
+                            "\t\t\t\tfor (var i = 0; i < selections.length; i++) {",
+                            "\t\t\t\t\trec = selections[i];",
+                            "\t\t\t\t\trec.erase({",
+                            "\t\t\t\t\t\tscope: this,",
+                            "\t\t\t\t\t\tsuccess: function(record, operation) {",
+                            "\t\t\t\t\t\t\tgrid.setLoading(false);",
+                            "\t\t\t\t\t\t},",
+                            "\t\t\t\t\t\tfailure: function(record, operation) {",
+                            "\t\t\t\t\t\t\tgrid.setLoading(false);",
+                            "\t\t\t\t\t\t\tExt.Msg.alert(\"Operation Failed\", \"Please try again later or contact your system administrator\");",
+                            "\t\t\t\t\t\t}",
+                            "\t\t\t\t\t});",
+                            "\t\t\t\t}",
+                            "",
+                            "\t\t\t}",
+                            "\t\t);"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onDeleteRecord",
+                    "designerId": "4ebf9e55-afff-4c12-be3e-bb4b8ddb9771"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "type": "refresh"
+            },
+            "name": "MyTool6",
+            "designerId": "5f12225d-fc9c-49bf-a4a8-1753d54e5862",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onRefresh",
+                        "implHandler": [
+                            "          var grid = this.lookupReference('grid');",
+                            "        var gridStore = grid.getStore();",
+                            "        var rowEditor = grid.editingPlugin;",
+                            "        rowEditor.cancelEdit();",
+                            "        gridStore.load();"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onRefresh",
+                    "designerId": "4900652e-e020-4b13-a03d-01e7fb4d4d55"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowBeforeRender",
+                "implHandler": [
+                    "Ext.getStore('Tags').load();"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "name": "onWindowBeforeRender",
+            "designerId": "ec8f3623-4453-4b59-ae15-e5600f6c6c56"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowClose",
+                "implHandler": [
+                    "this.redirectTo('main');"
+                ],
+                "name": "close",
+                "scope": "me"
+            },
+            "name": "onWindowClose",
+            "designerId": "f4dbede8-4a8a-46af-b682-e576b3bc0b3c"
+        }
+    ]
+}

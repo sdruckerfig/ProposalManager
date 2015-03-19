@@ -1,0 +1,116 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "",
+            "{",
+            "  selectedNode: null",
+            "}"
+        ],
+        "designer|userAlias": "categoriesedit",
+        "designer|userClassName": "categories.EditViewModel"
+    },
+    "designerId": "aebe8dbf-4155-4309-9d5d-07f8f5799ae7",
+    "cn": [
+        {
+            "type": "Ext.data.TreeStore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "TaxonomyTerm",
+                "name": "Taxonomy",
+                "root": [
+                    "{",
+                    " name: 'Root',",
+                    " expanded: true",
+                    "}"
+                ],
+                "rootVisible": true
+            },
+            "name": "MyTreeStore2",
+            "designerId": "fb77951e-10aa-4619-9f95-c877914b8c92",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Rest",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "appendId": false,
+                        "extraParams": [
+                            "{",
+                            " checkboxes: false,",
+                            " noLeafs: true",
+                            "}"
+                        ],
+                        "format": "json",
+                        "url": "/rest/ProposalManager/Taxonomy",
+                        "withCredentials": true
+                    },
+                    "name": "MyRestProxy3",
+                    "designerId": "7c3ad00e-2ed7-4001-8c9d-69020fc5a003",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyJsonReader3",
+                            "designerId": "133ba692-8423-48ba-8410-df3f227f3d8e"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.app.bind.Formula",
+            "reference": {
+                "name": "formulas",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "isRootSelected"
+            },
+            "name": "MyFormula1",
+            "designerId": "f81fa021-f331-42cb-a25e-cfab32823546",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "get"
+                        ],
+                        "fn": "get",
+                        "implHandler": [
+                            "if (!get('selectedNode') || get('selectedNode').id == 'root') {",
+                            "    return false;",
+                            "} else {",
+                            "    return true;",
+                            "}"
+                        ]
+                    },
+                    "name": "get",
+                    "designerId": "5ac33644-b795-4351-8483-e4d3aa3cdbdf"
+                }
+            ]
+        }
+    ]
+}

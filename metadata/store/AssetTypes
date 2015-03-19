@@ -1,0 +1,57 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            " {id: 1,",
+            "  text: 'Proposal'",
+            "  },",
+            "  {",
+            "   id: 2,",
+            "   text: 'Stock'",
+            "  },",
+            "  {",
+            "   id: 3,",
+            "   text: 'RFP'",
+            "  }",
+            "]"
+        ],
+        "designer|userClassName": "AssetTypes",
+        "storeId": "AssetTypes"
+    },
+    "name": "MyStore1",
+    "designerId": "526f1131-0bc6-42af-a5c3-cb78c768cdb9",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyField10",
+            "designerId": "3369fe01-47ff-487f-ad23-67d6b17537a5"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "text"
+            },
+            "name": "MyField11",
+            "designerId": "57996cf7-bef9-42e9-a34d-1f528901da7d"
+        }
+    ]
+}

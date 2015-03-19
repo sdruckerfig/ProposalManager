@@ -1,0 +1,21 @@
+.titletext {
+    font-family: 'Comic Sans', sans-serif !important;
+}
+
+.mainBackground {
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ffffff;
+}
+
+.label {
+    font-weight: bold;
+    width: 80px;
+    float: left;
+    display: inline-block;
+}
+
+.metadatapanel br {
+    clear: both;
+}

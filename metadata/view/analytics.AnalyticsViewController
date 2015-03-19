@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "analyticsanalytics",
+        "designer|userClassName": "analytics.AnalyticsViewController"
+    },
+    "designerId": "ebb39f23-c25a-4c89-9e9f-56d59fa7e8b7"
+}

@@ -1,0 +1,519 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "assetbrowser",
+        "designer|userClassName": "asset.Browser",
+        "header": false,
+        "layout": "border",
+        "title": "My Panel"
+    },
+    "name": "MyPanel1",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "1eb06959-5c97-441f-a138-7b2289e23450",
+    "viewControllerInstanceId": "e8d0a8a6-d78a-40c8-89cf-d55048961c19",
+    "viewModelInstanceId": "11c30817-aca2-4432-a7d0-a3f90b8601e9",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowDeselect": true,
+                "collapsible": true,
+                "layout|flex": 1.5,
+                "layout|region": "center",
+                "layout|split": true,
+                "selection": [
+                    "{selectedRecord}"
+                ],
+                "store": [
+                    "{ProposalAssets}"
+                ],
+                "title": "Assets (double-click to view)"
+            },
+            "name": "MyGridPanel",
+            "configAlternates": {
+                "scrollable": "boolean",
+                "store": "binding",
+                "selection": "binding"
+            },
+            "designerId": "399137c4-43a2-4d8c-b0de-da973ba8200b",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "updatedate",
+                        "text": "Updated"
+                    },
+                    "name": "MyDateColumn",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "27884dd6-4a13-4f78-ace0-7a8d81e49fcd"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "title",
+                        "flex": 1,
+                        "text": "Title"
+                    },
+                    "name": "MyColumn",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "6d556d90-3442-42f4-bd2b-ed3d335f76b9"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "assettype",
+                        "text": "Type",
+                        "width": 90
+                    },
+                    "name": "MyColumn1",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "04b729a9-87d3-4f32-9d30-f6d28cfb9590"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "updateuser",
+                        "text": "Updated By"
+                    },
+                    "name": "MyColumn6",
+                    "designerId": "4566b18e-ce64-416d-9cbe-ea86ec195a3b"
+                },
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "5b385628-2a90-4bc7-a879-651bdfc5c969"
+                },
+                {
+                    "type": "Ext.grid.column.Action",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "menuDisabled": true,
+                        "width": 60
+                    },
+                    "name": "MyActionColumn",
+                    "designerId": "851f9938-2b9a-4910-8782-598f2a74fbb3",
+                    "cn": [
+                        {
+                            "type": "actioncolumnitem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "View Asset",
+                                "icon": "resources/images/view.png",
+                                "tooltip": "View"
+                            },
+                            "name": "MyActionColumnItem2",
+                            "designerId": "d2f9eddf-ede7-428e-807e-bd27d12426ea",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e",
+                                            "record",
+                                            "row"
+                                        ],
+                                        "designer|viewControllerFn": "onViewAsset",
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "this.redirectTo('viewasset/' + record.get('id'));"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "8d5b6a5c-8777-4c01-8b1a-f996e8ebf7a8"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "actioncolumnitem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "Edit Asset",
+                                "icon": "resources/images/document_edit.png",
+                                "tooltip": "Edit"
+                            },
+                            "name": "MyActionColumnItem",
+                            "designerId": "3f11e387-0d16-4ba5-b7bf-ba1b305bb130",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e",
+                                            "record",
+                                            "row"
+                                        ],
+                                        "designer|viewControllerFn": "onEditAsset",
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "this.redirectTo('editasset/' + record.get('id'));"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "3242bbb6-4f97-4c55-8917-c36b2de5c637"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "actioncolumnitem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "Download Asset",
+                                "icon": "resources/images/download.png",
+                                "tooltip": "Download"
+                            },
+                            "name": "MyActionColumnItem1",
+                            "designerId": "7c647ec5-7558-4076-a980-8319e683b084",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e",
+                                            "record",
+                                            "row"
+                                        ],
+                                        "designer|viewControllerFn": "onDownloadAsset",
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "",
+                                            "Ext.Msg.alert(\"Not Available\",\"Feature to be added later\");",
+                                            "this.redirectTo('downloadasset/' + record.get('id'));"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "004fa2eb-85d7-466a-9840-2f059140980a"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Tool",
+                    "reference": {
+                        "name": "tools",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnAddAsset",
+                        "tooltip": "Add New Asset",
+                        "type": "plus"
+                    },
+                    "name": "MyTool7",
+                    "designerId": "05bec005-9bbe-44be-9e30-4aba15acd8ba",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onNewAsset",
+                                "implHandler": [
+                                    "this.redirectTo('editasset/0');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onNewAsset",
+                            "designerId": "e7ea07e6-550a-41c2-a45b-85f657bd1800"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Tool",
+                    "reference": {
+                        "name": "tools",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnDeleteAsset",
+                        "disabled": [
+                            "{!selectedRecord}"
+                        ],
+                        "tooltip": "Delete Asset",
+                        "type": "minus"
+                    },
+                    "name": "MyTool8",
+                    "configAlternates": {
+                        "disabled": "binding"
+                    },
+                    "designerId": "0d4d88d4-7a04-412b-93d2-28169399bbc6",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDeleteClick",
+                                "implHandler": [
+                                    "var me = this;",
+                                    "var rec = me.getViewModel().get('selectedRecord');",
+                                    "var grid = tool.up('grid');",
+                                    "Ext.Msg.confirm(",
+                                    "    \"Delete Asset\",",
+                                    "    \"Are you sure that you want to delete \" + rec.get('title'),",
+                                    "    function(b) {",
+                                    "       rec.erase({",
+                                    "           success: function() {",
+                                    "              grid.getStore().load();  ",
+                                    "           },",
+                                    "           failure: function() {",
+                                    "               ",
+                                    "           }",
+                                    "       });",
+                                    "    }",
+                                    ");"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onDeleteClick",
+                            "designerId": "7f54bb65-e4f8-4182-97f2-58c510a57373"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Tool",
+                    "reference": {
+                        "name": "tools",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnRefresh",
+                        "type": "refresh"
+                    },
+                    "name": "MyTool9",
+                    "designerId": "8cbb1fef-3554-4b58-aea4-cc16cd4f1169",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefresh",
+                                "implHandler": [
+                                    "tool.up('grid').getStore().load();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onRefresh",
+                            "designerId": "30c8eecb-d686-4d95-87c5-a5762088bc27"
+                        }
+                    ]
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelItemDblClick",
+                        "implHandler": [
+                            "this.redirectTo('viewasset/' + record.get('id'));"
+                        ],
+                        "name": "itemdblclick",
+                        "scope": "me"
+                    },
+                    "name": "onGridpanelItemDblClick",
+                    "designerId": "512b65e2-cc0f-4290-a9aa-6bebd517da65"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 5,
+                "cls": [
+                    "metadatapanel"
+                ],
+                "collapsible": true,
+                "data": [
+                    "{selectedRecord}"
+                ],
+                "height": 150,
+                "html": null,
+                "layout|flex": 1,
+                "layout|region": "south",
+                "layout|split": true,
+                "title": [
+                    "{selectedRecord.title}"
+                ]
+            },
+            "name": "MyPanel2",
+            "configAlternates": {
+                "scrollable": "boolean",
+                "html": "string",
+                "title": "binding",
+                "data": "binding"
+            },
+            "designerId": "9df6c113-7d61-461b-be85-0185536296fc",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tpl",
+                        "implHandler": [
+                            "<tpl if=\"title != ''\">",
+                            "    <div class=\"label\">Title:</div>{title}<br />",
+                            "    <div class=\"label\">Type:</div>{assettype}<br />",
+                            "    <div class=\"label\">Updated:</div>{updatedate:date}<br />",
+                            "    <div class=\"label\">Description:</div><br />{description}",
+                            "</tpl>"
+                        ]
+                    },
+                    "name": "tpl",
+                    "designerId": "b3f18966-f267-4b72-a409-cdc85afbc2a2"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsible": true,
+                "layout|flex": 2,
+                "layout|region": "east",
+                "layout|split": true,
+                "layout|weight": 50
+            },
+            "name": "asset.viewer",
+            "designerId": "62f0a168-0022-4c17-ac83-24aa289077b6",
+            "masterInstanceId": "b1f74fdd-eda5-4293-a5a6-895a402f6b80"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsible": true,
+                "layout|region": "west",
+                "layout|split": true,
+                "layout|weight": 60,
+                "width": 250
+            },
+            "name": "asset.searchform",
+            "designerId": "09561068-44ac-4bc1-999b-987acac00057",
+            "masterInstanceId": "3e0863a1-848a-4868-841d-b8b700cb6e7a"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "loginlogin",
+        "designer|userClassName": "login.LoginViewController"
+    },
+    "designerId": "e7d92dcb-5bad-4b82-bc2c-cadbd2e87292"
+}

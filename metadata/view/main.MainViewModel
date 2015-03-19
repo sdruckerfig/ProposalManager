@@ -1,0 +1,33 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{ userInfo: null",
+            "}"
+        ],
+        "designer|userAlias": "mainmain",
+        "designer|userClassName": "main.MainViewModel"
+    },
+    "designerId": "61219bc4-8406-443b-a707-7c293f34b43a",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "ProposalAsset",
+                "name": "ProposalAssets"
+            },
+            "name": "MyStore",
+            "designerId": "6c80ee18-08ad-421d-923a-e2022f11655f"
+        }
+    ]
+}

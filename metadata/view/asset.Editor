@@ -1,0 +1,555 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "assetId": 0,
+        "autoShow": true,
+        "designer|userAlias": "editasset",
+        "designer|userClassName": "asset.Editor",
+        "height": 515,
+        "layout": "border",
+        "modal": true,
+        "title": "Add Asset",
+        "width": 945
+    },
+    "name": "MyWindow",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "7cce4b19-060f-45be-a3c6-d0f13d1e4ccb",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "assetId",
+            "type": "number"
+        }
+    ],
+    "viewControllerInstanceId": "81b7651e-2291-47fb-8616-9453e8043f21",
+    "viewModelInstanceId": "68284d36-97c3-4690-abc9-56d12aa751a6",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": null,
+                "header": false,
+                "layout": "fit",
+                "layout|flex": 1,
+                "layout|region": "center",
+                "reference": "theform",
+                "title": "My Form"
+            },
+            "name": "MyForm1",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "23d8a18b-1b33-4db5-8aee-6b93d777c67f",
+            "cn": [
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "activeTab": 0,
+                        "deferredRender": false,
+                        "tabPosition": "bottom"
+                    },
+                    "name": "MyTabPanel",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "ca36a5fb-68b5-4b07-ab7d-2b085be9a974",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": 10,
+                                "defaults": [
+                                    "{",
+                                    " anchor: '100%'",
+                                    "}"
+                                ],
+                                "layout": "anchor",
+                                "title": "Metadata"
+                            },
+                            "name": "MyPanel3",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "c26c616f-2237-47e7-8c2d-25c0205bb82a",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "7cfd3622-a57c-4acc-8a81-5a7aca7134a1"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "fieldLabel": "Asset Title",
+                                        "layout|anchor": null,
+                                        "name": "title",
+                                        "value": null
+                                    },
+                                    "name": "MyTextField1",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "ed8a64f0-ee50-4e3a-ad90-1affb07629df"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "fieldLabel": "Asset Type",
+                                        "forceSelection": true,
+                                        "layout|anchor": null,
+                                        "name": "idassettype",
+                                        "queryMode": "local",
+                                        "store": "AssetTypes",
+                                        "value": null,
+                                        "valueField": "id"
+                                    },
+                                    "name": "MyComboBox3",
+                                    "designerId": "946ac77a-a8c8-4794-8bf8-a501640c7633",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onAssetTypeChange",
+                                                "implHandler": [
+                                                    "if (newValue === 1 || newValue == 3) {",
+                                                    " this.lookupReference('idClient').show();",
+                                                    " this.lookupReference('datedue').show();   ",
+                                                    "} else {",
+                                                    " this.lookupReference('idClient').hide();",
+                                                    " this.lookupReference('datedue').hide(); ",
+                                                    "}",
+                                                    "",
+                                                    "if (newValue === 1) {",
+                                                    "  this.lookupReference('bWin').show();",
+                                                    "} else {",
+                                                    "  this.lookupReference('bWin').hide();",
+                                                    "}"
+                                                ],
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "name": "onAssetTypeChange",
+                                            "designerId": "fcdff0e9-cc84-495b-88a2-b0a97d1fa51e"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "clientname",
+                                        "fieldLabel": "Client Name",
+                                        "layout|anchor": null,
+                                        "name": "idclient",
+                                        "reference": "idClient",
+                                        "store": "Clients",
+                                        "valueField": "id"
+                                    },
+                                    "name": "MyComboBox2",
+                                    "designerId": "5b7c2bef-0ac6-4f40-90fa-b7a032dd1e0b"
+                                },
+                                {
+                                    "type": "Ext.form.field.Date",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Date Due",
+                                        "layout|anchor": null,
+                                        "name": "datedue",
+                                        "reference": "datedue"
+                                    },
+                                    "name": "MyDateField",
+                                    "designerId": "a28392d9-79a0-45e3-a624-b722c80824c8"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": null,
+                                        "fieldLabel": "Win?",
+                                        "layout|anchor": null,
+                                        "name": "bwin",
+                                        "reference": "bWin",
+                                        "uncheckedValue": "false"
+                                    },
+                                    "name": "MyCheckbox",
+                                    "designerId": "9290a2b1-30ad-4267-a141-9b7c788afbda"
+                                },
+                                {
+                                    "type": "Ext.form.field.TextArea",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Asset Description",
+                                        "height": 200,
+                                        "labelAlign": "top",
+                                        "layout|anchor": null,
+                                        "name": "description"
+                                    },
+                                    "name": "MyTextArea",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "73c904b2-d498-4da2-a855-97c364ab5964"
+                                },
+                                {
+                                    "type": "Ext.form.field.Tag",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "collapseOnSelect": true,
+                                        "createNewOnBlur": true,
+                                        "createNewOnEnter": true,
+                                        "fieldLabel": "Tags",
+                                        "layout|anchor": null,
+                                        "name": "tags",
+                                        "queryMode": "local",
+                                        "store": "Tags",
+                                        "valueField": "id"
+                                    },
+                                    "name": "MyTagField",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "6ffc7f3a-e7d0-45e0-b7ff-abdfcc7ace15"
+                                },
+                                {
+                                    "type": "Ext.form.field.File",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Upload File",
+                                        "hidden": true,
+                                        "layout|anchor": null,
+                                        "name": "uploadedfile"
+                                    },
+                                    "name": "MyFileUpload",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "d06a6139-a614-4a6e-8892-f7ea9f463624"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Content URL",
+                                        "layout|anchor": null,
+                                        "name": "contenturl"
+                                    },
+                                    "name": "MyTextField2",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "564a68c5-34a5-4bcc-84e4-5788f5404203"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout": "fit",
+                                "title": "Full Text"
+                            },
+                            "name": "MyPanel4",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "decde016-daa7-48d4-9ba2-a8f995f9a64d",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig1",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "de28a68c-444d-4c7b-b2b0-b24f207abef9"
+                                },
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "name": "fullcontent"
+                                    },
+                                    "name": "ux.tinymce2",
+                                    "designerId": "4fe32d16-2ef0-4543-972e-a363f3bed46d",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "name",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "masterInstanceId": "b7082e0f-da14-47f3-8edc-f13cbe84f1f7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.tab.Bar",
+                            "reference": {
+                                "name": "tabBar",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyTabBar",
+                            "designerId": "833ee542-1abf-4764-8fa6-bd4f9e968755",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTabbarBeforeRender",
+                                        "implHandler": [
+                                            "        component.add([",
+                                            "            {",
+                                            "                xtype: 'tbfill'",
+                                            "            },",
+                                            "            {",
+                                            "                xtype: 'button',",
+                                            "                text: 'Save',",
+                                            "                formBind: true,",
+                                            "                width: 100,",
+                                            "                handler: 'onSave',",
+                                            "                margin: '5 0 5 0'",
+                                            "            }",
+                                            "        ]);"
+                                        ],
+                                        "name": "beforerender",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTabbarBeforeRender",
+                                    "designerId": "85af55cb-6a7a-4616-a76d-0750c3265dc6"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Tool",
+                    "reference": {
+                        "name": "tools",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "formBind": true,
+                        "type": "save"
+                    },
+                    "name": "MyTool",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "e8621197-f0ec-4146-ac82-a3b14c6e26b6"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tree.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsible": true,
+                "header": false,
+                "layout|region": "west",
+                "layout|split": true,
+                "reference": "taxonomy",
+                "rootVisible": false,
+                "store": [
+                    "{Taxonomy}"
+                ],
+                "title": "Taxonomy",
+                "width": 250
+            },
+            "name": "MyTreePanel",
+            "configAlternates": {
+                "scrollable": "boolean",
+                "store": "binding"
+            },
+            "designerId": "f4f36721-5241-49ac-94d5-b35a2b9f4776",
+            "cn": [
+                {
+                    "type": "Ext.tree.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTreeView1",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "051fe867-ae37-4133-80a3-4957931f22e6"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowAfterRender",
+                "implHandler": [
+                    "if (component.getAssetId() == 0) {",
+                    "    ",
+                    "    // create new rcord",
+                    "    this.lookupReference('theform').loadRecord(Ext.create('ProposalManager.model.ProposalAsset'));",
+                    "    ",
+                    "} else {",
+                    "   ",
+                    "    // load record from web service",
+                    "    ",
+                    "   ProposalManager.model.ProposalAsset.load(component.getAssetId(), {",
+                    "    ",
+                    "    scope: this,",
+                    "    ",
+                    "    failure: function(record, operation) {",
+                    "        //do something if the load failed",
+                    "        Ext.Msg.alert(\"Failure\",\"Failed to retrieve record\");",
+                    "    },",
+                    "    ",
+                    "    success: function(record, operation) {",
+                    "",
+                    "       // populate idclient box",
+                    "       var s = this.lookupReference('idClient').getStore();",
+                    "       if (!s.getById(record.get('idclient'))) {",
+                    "           s.add({",
+                    "               id: record.get('idclient'),",
+                    "               clientname: record.get('clientname')",
+                    "           });",
+                    "       }",
+                    "",
+                    "       //transfer data from the record into the form fields",
+                    "       this.lookupReference('theform').loadRecord(record);",
+                    "",
+                    "    }",
+                    "   });",
+                    "}",
+                    "",
+                    "// load taxonomy from server, pre-selecting checked records",
+                    "this.getViewModel().getStore('Taxonomy').load({",
+                    "   params: {",
+                    "       assetId: component.getAssetId()",
+                    "   }",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onWindowAfterRender",
+            "designerId": "442098b4-7b38-4e4f-91f3-32f98160b5c7"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowClose",
+                "implHandler": [
+                    "this.redirectTo('main');"
+                ],
+                "name": "close",
+                "scope": "me"
+            },
+            "name": "onWindowClose",
+            "designerId": "3f70d314-5282-4776-ab8d-258f4649f283"
+        }
+    ]
+}

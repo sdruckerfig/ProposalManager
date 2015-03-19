@@ -1,0 +1,24 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "mainBackground"
+        ],
+        "designer|initialView": true,
+        "designer|userAlias": "mainviewport",
+        "designer|userClassName": "main.Viewport",
+        "layout": "fit",
+        "requires": [
+            "ProposalManager.view.main.Main"
+        ]
+    },
+    "name": "MyViewport",
+    "designerId": "0e3ac9e7-17c6-4779-bd74-a9b42e48d1a9",
+    "viewControllerInstanceId": "8966f16b-333f-43fb-b681-0739a8d604c5",
+    "viewModelInstanceId": "e8abcf64-2cf4-4ea1-a3bd-5fe890648395"
+}

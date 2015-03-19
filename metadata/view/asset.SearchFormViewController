@@ -1,0 +1,80 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "searchform",
+        "designer|userClassName": "asset.SearchFormViewController"
+    },
+    "designerId": "e5fc15e5-f6cf-4616-af78-4431ad5603e8",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFilterChange",
+                "implHandler": [
+                    "var view = this.getView();",
+                    "var fields = view.getValues();",
+                    "var filters = [];",
+                    "",
+                    "// handle input fields",
+                    "",
+                    "if (!Ext.isEmpty(fields.idClient) && fields.idClient > 0) {",
+                    "   filters.push({",
+                    "           property: 'idclient',",
+                    "           value: fields.idClient",
+                    "    });",
+                    "}",
+                    "",
+                    "if (!Ext.isEmpty(fields.idAssetType) && fields.idAssetType > 0) {",
+                    "    filters.push({",
+                    "           property: 'idassettype',",
+                    "           value: fields.idAssetType",
+                    "    });",
+                    "}",
+                    "",
+                    "if (!Ext.isEmpty(fields.searchtext)) {",
+                    "    filters.push({",
+                    "        property: 'searchterm',",
+                    "        value: fields.searchtext",
+                    "    });",
+                    "}",
+                    "",
+                    "// get checked nodes from tree",
+                    "",
+                    "var checkedNodes = this.lookupReference('taxonomytree').getChecked();",
+                    "var treeNodeIds=Ext.Array.pluck(checkedNodes,\"id\");",
+                    "if (treeNodeIds.length) {",
+                    "    filters.push({",
+                    "        property: 'taxonomyterms',",
+                    "        value: treeNodeIds.join(',')",
+                    "    });",
+                    "}",
+                    "",
+                    "// Apply filters",
+                    "",
+                    "var s = this.getViewModel().getStore('ProposalAssets');",
+                    "if (filters.length > 0) {",
+                    "    s.clearFilter(true);",
+                    "    s.filter(filters);",
+                    "} else {",
+                    "    s.clearFilter(true);",
+                    "    s.load();",
+                    "}",
+                    "",
+                    ""
+                ]
+            },
+            "name": "onFilterChange",
+            "designerId": "8f407e2a-7818-4626-bcf6-bead247f18d3"
+        }
+    ]
+}

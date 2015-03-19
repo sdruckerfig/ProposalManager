@@ -1,0 +1,259 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": null,
+        "collapsible": null,
+        "container|align": "stretch",
+        "defaults": [
+            "{",
+            " margin: '5 5 0 5'",
+            "}"
+        ],
+        "designer|userAlias": "assetsearchform",
+        "designer|userClassName": "asset.SearchForm",
+        "layout": "vbox",
+        "title": "Search",
+        "viewModel": [
+            "null",
+            ""
+        ],
+        "width": null
+    },
+    "name": "MyForm",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "3e0863a1-848a-4868-841d-b8b700cb6e7a",
+    "viewControllerInstanceId": "e5fc15e5-f6cf-4616-af78-4431ad5603e8",
+    "viewModelInstanceId": "d6f93e9a-9289-472e-bba0-0b80bf9d779e",
+    "cn": [
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "emptyText": "All Asset Types",
+                "fieldLabel": "Label",
+                "forceSelection": true,
+                "hideLabel": true,
+                "layout|flex": null,
+                "name": "idAssetType",
+                "queryMode": "local",
+                "store": "AssetTypes",
+                "value": null,
+                "valueField": "id"
+            },
+            "name": "MyComboBox",
+            "designerId": "dd64fc62-6c2e-440f-8355-662e19fa20da",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onAssetTypeSelect",
+                        "implHandler": [
+                            "var assetbrowser  = field.up('assetbrowser');",
+                            "assetbrowser.getController().reconfigureGrid(newValue);",
+                            "this.onFilterChange();"
+                        ],
+                        "name": "change",
+                        "scope": "me"
+                    },
+                    "name": "onAssetTypeSelect",
+                    "designerId": "22d44ae3-84c7-4e9b-8c6c-6e77e7238819"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayField": "clientname",
+                "emptyText": "All Clients",
+                "fieldLabel": "Label",
+                "forceSelection": true,
+                "hideLabel": true,
+                "layout|flex": null,
+                "name": "idClient",
+                "store": "Clients",
+                "valueField": "id"
+            },
+            "name": "MyComboBox1",
+            "designerId": "a08bfe23-82de-4dcf-8ba4-99f4fcd36d3d",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onIdClientChange",
+                        "implHandler": [
+                            "this.onFilterChange();"
+                        ],
+                        "name": "change",
+                        "scope": "me"
+                    },
+                    "name": "onIdClientChange",
+                    "designerId": "80a15c07-6169-49fd-adaf-4551d98a8d73"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "emptyText": "Search Terms",
+                "fieldLabel": "",
+                "hideLabel": true,
+                "layout|flex": null,
+                "name": "searchtext"
+            },
+            "name": "MyTextField",
+            "designerId": "97476c69-9c25-4c7d-bbc8-14039c146a6f",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "buffer": 250,
+                        "fn": "onSearchTermChange",
+                        "implHandler": [
+                            "this.onFilterChange();"
+                        ],
+                        "name": "change",
+                        "scope": "me"
+                    },
+                    "name": "onSearchTermChange",
+                    "designerId": "272f7a54-55a4-4751-b556-fd56615cf682"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "margin": "10 0 0 0",
+                "reference": "taxonomytree"
+            },
+            "name": "categories.select",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "def2fea6-01ff-4a69-8d91-67a0ee20b2d1",
+            "masterInstanceId": "0b505c11-04a9-43ca-a92b-5f34d3bfc274",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTaxonomyCheckChange",
+                        "implHandler": [
+                            "this.onFilterChange();"
+                        ],
+                        "name": "checkchange",
+                        "scope": "me"
+                    },
+                    "name": "onTaxonomyCheckChange",
+                    "designerId": "46479b1b-1cb8-4621-ab2c-a483de074bf9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "center",
+                "dock": "bottom",
+                "layout|flex": 1
+            },
+            "name": "MyToolbar",
+            "designerId": "dc0b5198-bbd1-4f40-b671-bd4e338916dd",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "Clear Filters"
+                    },
+                    "name": "MyButton",
+                    "designerId": "8cb2062c-4fd7-4473-8a15-b3c8390bad5c",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "designer|viewControllerFn": "onClearFilters",
+                                "fn": "handler",
+                                "implHandler": [
+                                    "this.getView().reset(); // reset form",
+                                    "// clear checked boxes",
+                                    "var tree = this.lookupReference('taxonomytree');",
+                                    "var checkedNodes = tree.getChecked();",
+                                    "for (var i=0; i<checkedNodes.length; i++) {",
+                                    "    checkedNodes[i].set('checked',false);",
+                                    "}",
+                                    "this.onFilterChange();"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "be780e16-2793-4010-88c7-6ee6da8dd8d6"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

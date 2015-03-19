@@ -1,0 +1,50 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tinymce2",
+        "designer|userClassName": "ux.TinyMce2",
+        "height": 250,
+        "layout": "fit",
+        "name": "",
+        "width": 400
+    },
+    "name": "MyContainer",
+    "designerId": "b7082e0f-da14-47f3-8edc-f13cbe84f1f7",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "name",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "9a4bf6a1-4653-442f-b7dd-c13f04e88991",
+    "viewModelInstanceId": "cbc418f3-0eb8-4534-ad5d-f6a5c8302cf3",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onContainerBeforeRender",
+                "implHandler": [
+                    "component.add({",
+                    "    xtype: 'tinymce',",
+                    "    name: component.getName()",
+                    "});"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "name": "onContainerBeforeRender",
+            "designerId": "7da1381e-d99a-44a2-98a3-a7583153d2ae"
+        }
+    ]
+}

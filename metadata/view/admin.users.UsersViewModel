@@ -1,0 +1,90 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{selectedRecord: null}"
+        ],
+        "designer|userAlias": "adminusersusers",
+        "designer|userClassName": "admin.users.UsersViewModel"
+    },
+    "name": "admin.companies.CompaniesViewModel1",
+    "designerId": "27135892-a161-4101-bbe5-be64c1850a86",
+    "cn": [
+        {
+            "type": "Ext.app.bind.Formula",
+            "reference": {
+                "name": "formulas",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bind": [
+                    "{",
+                    "  bindTo: '{selectedRecord}',",
+                    "  deep: true",
+                    "  ",
+                    "}"
+                ],
+                "name": "recordStatus"
+            },
+            "name": "MyFormula",
+            "configAlternates": {
+                "bind": "object"
+            },
+            "designerId": "271561e2-daf8-49f8-b675-b2b83dcf3957",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "data"
+                        ],
+                        "fn": "get",
+                        "implHandler": [
+                            "var rec = data;",
+                            "if (!rec || !Ext.isDate(rec.get('updatedate'))) {",
+                            "    return '';",
+                            "} else {",
+                            "   var msg = Ext.String.format(",
+                            "        \"Last updated by {0} on {1}\",",
+                            "        rec.get('updateuser'),",
+                            "        Ext.Date.format(rec.get('updatedate'),'m/d/Y @ H:i')",
+                            "    );",
+                            "    return msg;",
+                            "}"
+                        ]
+                    },
+                    "name": "get",
+                    "designerId": "560776c9-4a7b-4635-a69e-5ae0023525a8"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoLoad": true,
+                "model": "User",
+                "name": "Users",
+                "remoteFilter": true,
+                "remoteSort": true
+            },
+            "name": "MyStore1",
+            "designerId": "6f451344-9eed-4025-86a1-0e89cfd85709"
+        }
+    ]
+}

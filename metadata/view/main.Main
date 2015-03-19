@@ -1,0 +1,72 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "main",
+        "designer|userClassName": "main.Main",
+        "layout": "border",
+        "viewModel": [
+            "null"
+        ]
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "78e2fc36-9b80-4437-8eb7-66cba195d51a",
+    "viewControllerInstanceId": "aff6e861-2d35-41d6-b40e-e16ac09d4ca9",
+    "viewModelInstanceId": "61219bc4-8406-443b-a707-7c293f34b43a",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "north"
+            },
+            "name": "main.toolbar",
+            "designerId": "04170796-63f1-4d90-af17-2ba38dce0814",
+            "masterInstanceId": "cd1b3718-cef0-4d31-b592-c4d5704b4826"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center"
+            },
+            "name": "asset.browser",
+            "designerId": "ab8c65f4-a78a-466f-80b7-c1488472d403",
+            "masterInstanceId": "1eb06959-5c97-441f-a138-7b2289e23450"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelBeforeRender",
+                "implHandler": [
+                    "Ext.getStore('Tags').load();",
+                    "// Ext.getStore('TaxonomyTerms').load();",
+                    "Ext.getStore('Clients').load();"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "name": "onPanelBeforeRender",
+            "designerId": "7dfde8b1-b4c4-4c96-9908-8465ec40a000"
+        }
+    ]
+}

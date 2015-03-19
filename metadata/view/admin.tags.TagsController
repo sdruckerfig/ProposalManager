@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "admintagstags",
+        "designer|userClassName": "admin.tags.TagsController"
+    },
+    "name": "admin.clients.ClientsController1",
+    "designerId": "f165c118-9442-4672-9191-4a1a5094f956"
+}

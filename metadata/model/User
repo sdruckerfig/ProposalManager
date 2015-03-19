@@ -1,0 +1,259 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "User"
+    },
+    "name": "MyModel",
+    "designerId": "7e5b0880-96ca-40d2-b1fd-57a038c5ed6b",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyInteger2",
+            "designerId": "83391fea-f49f-4f67-9e22-946f09fdd64e"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "username"
+            },
+            "name": "MyField13",
+            "designerId": "53ec9a93-be31-4e93-86e6-74ac082ed810",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validations",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation1",
+                    "designerId": "a2ac41bc-21c2-4027-a353-1a73e08eb71b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "password"
+            },
+            "name": "MyField14",
+            "designerId": "5c2a84cf-9028-418c-bfbf-f43e35fe32e1",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validations",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation2",
+                    "designerId": "ed68783f-c6c4-491b-a3d5-73471c4fb07b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "email"
+            },
+            "name": "MyField15",
+            "designerId": "88eed912-3dd5-4845-85cf-d4eb5dd6c913",
+            "cn": [
+                {
+                    "type": "emailvalidation",
+                    "reference": {
+                        "name": "validations",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyEmailValidation",
+                    "designerId": "3b67a86d-3717-4583-a829-c8f3864b9db2"
+                },
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validations",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation3",
+                    "designerId": "3a7cce98-ece1-4c25-843d-e2892486b39d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "idcompany"
+            },
+            "name": "MyField16",
+            "designerId": "444572c7-896c-4dd5-98e6-f7b0e68ebfd9",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validations",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation4",
+                    "designerId": "a5d1a420-36c2-43c3-b305-ea2868b2ef98"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "idrole"
+            },
+            "name": "MyInteger",
+            "designerId": "52f5d167-e05a-4513-857b-a2f6cfc437ed",
+            "cn": [
+                {
+                    "type": "presencevalidation",
+                    "reference": {
+                        "name": "validations",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPresenceValidation5",
+                    "designerId": "baa1110a-e716-4078-bce3-38bcbbfb950a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "updateuser"
+            },
+            "name": "MyField18",
+            "designerId": "0125d537-5464-435f-b651-5938e0511d24"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "m/d/Y H:i",
+                "name": "updatedate"
+            },
+            "name": "MyDate2",
+            "designerId": "6ca780a3-e265-425e-9bb9-0d8a4f8e092b"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "format": "json",
+                "url": "/rest/ProposalManager/User",
+                "withCredentials": true
+            },
+            "name": "MyRestProxy",
+            "designerId": "fd675953-aed6-4646-bd33-b08417ec8057",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "records"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "661f84b4-9565-45e2-aa9e-25a97d3f9ae5"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter",
+                    "designerId": "d73e0c6f-516f-4d9a-b0e8-94587ec51351"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "companyname"
+            },
+            "name": "MyField19",
+            "designerId": "10a9419d-eedc-454d-8650-90b7c7feee54"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "role"
+            },
+            "name": "MyField20",
+            "designerId": "59a1f32d-2be0-41ae-ae95-6cf3d0c6cafa"
+        }
+    ]
+}

@@ -1,0 +1,177 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "analyticsanalytics",
+        "designer|userClassName": "analytics.AnalyticsViewModel"
+    },
+    "designerId": "2cb0b6a8-ca77-4af6-a67b-395cab5cda8d",
+    "cn": [
+        {
+            "type": "jsonstore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoLoad": true,
+                "name": "Analytics"
+            },
+            "name": "MyJsonStore",
+            "designerId": "ff802aa7-fca7-4e12-884f-c9d72af640a0",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Rest",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "format": "json",
+                        "url": "/rest/ProposalManager/WinRate"
+                    },
+                    "name": "MyRestProxy7",
+                    "designerId": "d7fab962-6339-4807-bcb8-876382e23fee",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyJsonReader6",
+                            "designerId": "a337ce60-08f5-4e7e-ac88-81c9ee1165e2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "month"
+                    },
+                    "name": "MyField18",
+                    "designerId": "b8a78312-3326-4a5d-a1dc-9293c1fb1ad9"
+                },
+                {
+                    "type": "Ext.data.field.Integer",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "losses"
+                    },
+                    "name": "MyInteger",
+                    "designerId": "0021b248-3c9a-4b8f-90f3-0754dfbcd949",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "data"
+                                ],
+                                "fn": "calculate",
+                                "implHandler": [
+                                    "return data.total - data.wins;"
+                                ]
+                            },
+                            "name": "calculate",
+                            "designerId": "5c9a0aaf-0cea-40ac-b890-4959a0882014"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Integer",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "wins"
+                    },
+                    "name": "MyInteger2",
+                    "designerId": "e726d855-4642-453d-83ac-0fb799d102e3"
+                },
+                {
+                    "type": "Ext.data.field.Integer",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "total"
+                    },
+                    "name": "MyInteger5",
+                    "designerId": "b12f33f5-a622-4ac2-86b9-4609abc96372"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "winpct"
+                    },
+                    "name": "MyNumber",
+                    "designerId": "fad5125c-0b8d-4481-8cb9-aefbc34f9d63",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "data"
+                                ],
+                                "fn": "calculate",
+                                "implHandler": [
+                                    "return (data.wins / data.total) * 100;"
+                                ]
+                            },
+                            "name": "calculate",
+                            "designerId": "554482d5-d42f-4819-b58c-9416e82c19fb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.util.Sorter",
+                    "reference": {
+                        "name": "sorters",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "property": "month"
+                    },
+                    "name": "MySorter",
+                    "designerId": "783e2efd-dd48-4f26-a951-4a62379f628d"
+                }
+            ]
+        }
+    ]
+}

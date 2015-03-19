@@ -1,0 +1,72 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{selectedRecord: null}"
+        ],
+        "designer|userAlias": "admincompaniescompanies",
+        "designer|userClassName": "admin.companies.CompaniesViewModel"
+    },
+    "designerId": "e0ccce0c-449e-4adf-b6dd-e455d058a438",
+    "cn": [
+        {
+            "type": "Ext.app.bind.Formula",
+            "reference": {
+                "name": "formulas",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bind": [
+                    "{",
+                    "  bindTo: '{selectedRecord}',",
+                    "  deep: true",
+                    "  ",
+                    "}"
+                ],
+                "name": "recordStatus"
+            },
+            "name": "MyFormula",
+            "configAlternates": {
+                "bind": "object"
+            },
+            "designerId": "fafdecb4-2ba7-4528-b1f9-b51ae1081a40",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "data"
+                        ],
+                        "fn": "get",
+                        "implHandler": [
+                            "var rec = data;",
+                            "if (!rec || !Ext.isDate(rec.get('updatedate'))) {",
+                            "    return '';",
+                            "} else {",
+                            "   var msg = Ext.String.format(",
+                            "        \"Last updated by {0} on {1}\",",
+                            "        rec.get('updateuser'),",
+                            "        Ext.Date.format(rec.get('updatedate'),'m/d/Y @ H:i')",
+                            "    );",
+                            "    return msg;",
+                            "}"
+                        ]
+                    },
+                    "name": "get",
+                    "designerId": "4a5eb1ed-8669-40c3-b9d4-e8d894684b01"
+                }
+            ]
+        }
+    ]
+}

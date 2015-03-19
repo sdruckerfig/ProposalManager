@@ -1,0 +1,68 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TaxonomyTerm"
+    },
+    "name": "MyModel",
+    "designerId": "40f8fda2-6434-4bca-8155-f67821244173",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "text",
+                "persist": null
+            },
+            "name": "MyField3",
+            "designerId": "3aec6992-360e-42fd-9e3f-244a73275ce3"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyField",
+            "designerId": "cece2559-63e4-4660-bde7-0dafb8ac7b9a"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "bitmask"
+            },
+            "name": "MyField17",
+            "designerId": "4d7b90e3-77e7-4a5f-8e1b-1abfeee57d72"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "parentid"
+            },
+            "name": "MyInteger4",
+            "designerId": "872a3f99-e065-463e-9d2e-aa72d039bc08"
+        }
+    ]
+}

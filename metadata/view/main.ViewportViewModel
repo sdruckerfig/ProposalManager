@@ -1,0 +1,90 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "",
+            "{",
+            "  userName: null,",
+            "  userRole: null",
+            "}"
+        ],
+        "designer|userAlias": "mainviewport",
+        "designer|userClassName": "main.ViewportViewModel"
+    },
+    "designerId": "e8abcf64-2cf4-4ea1-a3bd-5fe890648395",
+    "cn": [
+        {
+            "type": "Ext.app.bind.Formula",
+            "reference": {
+                "name": "formulas",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "isAdmin"
+            },
+            "name": "MyFormula1",
+            "designerId": "867a5fd1-97b5-40be-82d6-c61d1fe7ce34",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "get"
+                        ],
+                        "fn": "get",
+                        "implHandler": [
+                            "return (get('userRole') == 'Admin' || get('userRole') == 'SuperAdmin');"
+                        ]
+                    },
+                    "name": "get",
+                    "designerId": "678c01ff-0445-4951-8a38-510af410daaf"
+                }
+            ]
+        },
+        {
+            "type": "Ext.app.bind.Formula",
+            "reference": {
+                "name": "formulas",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "isSuperAdmin"
+            },
+            "name": "MyFormula2",
+            "designerId": "e2c71af3-d60f-4eea-9c15-ffc018015be7",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "get"
+                        ],
+                        "fn": "get",
+                        "implHandler": [
+                            "return(get('userRole')== 'SuperAdmin');"
+                        ]
+                    },
+                    "name": "get",
+                    "designerId": "ab63b4c4-60e4-48aa-a332-559ce8b53165"
+                }
+            ]
+        }
+    ]
+}

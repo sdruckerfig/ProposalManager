@@ -1,0 +1,61 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "asseteditor",
+        "designer|userClassName": "asset.EditorViewController"
+    },
+    "designerId": "81b7651e-2291-47fb-8616-9453e8043f21",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "b",
+                    "e"
+                ],
+                "fn": "onSave",
+                "implHandler": [
+                    "var me = this;",
+                    "// save metadata",
+                    "// var rec = this.getViewModel().get('selectedRecord');",
+                    "var form = me.lookupReference('theform');",
+                    "form.updateRecord();",
+                    "var rec = form.getRecord();",
+                    "",
+                    "// get taxonomy",
+                    "var checked = this.lookupReference('taxonomy').getChecked();",
+                    "rec.set('taxonomy', Ext.Array.pluck(checked,\"id\").join(','));",
+                    "",
+                    "rec.save({",
+                    "    useCredentials: true,",
+                    "    success: function(response,req) {",
+                    "        var response = Ext.decode(req.getResponse().responseText);",
+                    "        rec.set('id',response.id);",
+                    "        rec.commit();",
+                    "        Ext.toast(\"Record Saved\",\"Save Complete\");",
+                    "        var v = me.getView();",
+                    "        v.fireEvent('aftersave',v,rec);",
+                    "        v.close();",
+                    "",
+                    "    },",
+                    "    failure: function(response,req) {",
+                    "        Ext.Msg.alert(\"Transaction Failure\",\"Please try again later\");",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "onSave",
+            "designerId": "753a9b70-092f-4e43-b6bf-71e778051c67"
+        }
+    ]
+}

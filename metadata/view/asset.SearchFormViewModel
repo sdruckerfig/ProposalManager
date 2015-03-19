@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "searchform",
+        "designer|userClassName": "asset.SearchFormViewModel"
+    },
+    "designerId": "d6f93e9a-9289-472e-bba0-0b80bf9d779e"
+}

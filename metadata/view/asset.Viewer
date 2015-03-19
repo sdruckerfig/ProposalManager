@@ -1,0 +1,49 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "assetId": 0,
+        "designer|userAlias": "assetviewer",
+        "designer|userClassName": "asset.Viewer",
+        "layout": "fit",
+        "title": "Full Content",
+        "width": null
+    },
+    "name": "MyPanel1",
+    "designerId": "b1f74fdd-eda5-4293-a5a6-895a402f6b80",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "assetId",
+            "type": "number"
+        }
+    ],
+    "viewControllerInstanceId": "54bc9ff3-71df-439c-913e-645da197afe6",
+    "viewModelInstanceId": "1195132a-909c-4151-a900-1e0d6a542272",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "newVal",
+                    "oldVal"
+                ],
+                "fn": "updateAssetId",
+                "implHandler": [
+                    "this.getController().loadAsset(newVal);"
+                ]
+            },
+            "name": "updateAssetId",
+            "designerId": "1bdbaaec-7bee-4d0d-9b93-68c3824e3231"
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "",
+            "{",
+            "  selectedRecord: null",
+            "}"
+        ],
+        "designer|userAlias": "asseteditor",
+        "designer|userClassName": "asset.EditorViewModel"
+    },
+    "designerId": "68284d36-97c3-4690-abc9-56d12aa751a6",
+    "cn": [
+        {
+            "type": "Ext.data.TreeStore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Taxonomy",
+                "root": [
+                    "{",
+                    " name: 'Root',",
+                    " expanded: true,",
+                    " children: []",
+                    "}"
+                ]
+            },
+            "name": "MyTreeStore",
+            "designerId": "e99fd7dc-0942-445d-a426-2574f7d64d8b",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Rest",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "appendId": false,
+                        "extraParams": [
+                            "{",
+                            " checkboxes: true",
+                            "}"
+                        ],
+                        "format": "json",
+                        "url": "/rest/ProposalManager/Taxonomy",
+                        "withCredentials": true
+                    },
+                    "name": "MyRestProxy3",
+                    "designerId": "6f36aea5-1964-417e-a85c-e4c76d2596a3",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyJsonReader3",
+                            "designerId": "d947e3d0-b624-43f8-9050-214515c59695"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

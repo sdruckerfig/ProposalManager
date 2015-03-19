@@ -1,0 +1,295 @@
+{
+    "type": "Ext.toolbar.Toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "maintoolbar",
+        "designer|userClassName": "main.Toolbar",
+        "height": 35,
+        "viewModel": [
+            "null"
+        ]
+    },
+    "name": "MyToolbar",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "cd1b3718-cef0-4d31-b592-c4d5704b4826",
+    "viewControllerInstanceId": "fa0f87de-c83d-4f7f-81b8-65981e3e16af",
+    "viewModelInstanceId": "f5ce9260-ecd6-4a84-858e-b8b03c613aba",
+    "cn": [
+        {
+            "type": "Ext.toolbar.TextItem",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "titletext"
+                ],
+                "html": "Proposal Manager",
+                "layout|flex": null
+            },
+            "name": "MyTextItem",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "23dc07bd-dcd0-41b3-a51f-9b2ce6942b01"
+        },
+        {
+            "type": "Ext.toolbar.Fill",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "name": "MyFill",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "a23fe5e9-e8e8-41a2-8415-cf9dd4d5eee0"
+        },
+        {
+            "type": "Ext.button.Split",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": null,
+                "layout|flex": null,
+                "text": "Administration"
+            },
+            "name": "MySplitButton1",
+            "configAlternates": {
+                "scrollable": "boolean",
+                "hidden": "binding"
+            },
+            "designerId": "9b85aa4b-353d-4865-8ab6-b04c24dbf717",
+            "cn": [
+                {
+                    "type": "Ext.menu.Menu",
+                    "reference": {
+                        "name": "menu",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 160
+                    },
+                    "name": "MyMenu1",
+                    "designerId": "fb42a2ce-9b45-4c98-a6f3-0d2e57ff684c",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": [
+                                    "{!isAdmin}"
+                                ],
+                                "itemId": "adminclients",
+                                "text": "Edit Clients"
+                            },
+                            "name": "MyMenuItem9",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "0e78e853-5292-499a-9b99-ba5733788c00"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": [
+                                    "{!isAdmin}"
+                                ],
+                                "itemId": "editcategories",
+                                "text": "Edit Categories"
+                            },
+                            "name": "MyMenuItem2",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "e1532724-e87c-4a78-a29c-095cdf522a54"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "admintags",
+                                "text": "Edit Tags"
+                            },
+                            "name": "MyMenuItem3",
+                            "designerId": "72a27883-e6d6-4abd-a0d3-e4941146b2f6"
+                        },
+                        {
+                            "type": "Ext.menu.Separator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MySeparator",
+                            "designerId": "e2641064-1079-4115-862f-104f0df598f2"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "analytics",
+                                "text": "Production Chart"
+                            },
+                            "name": "MyMenuItem7",
+                            "designerId": "d471fe17-1fe5-4e1b-b04e-f4fa04c4764e"
+                        },
+                        {
+                            "type": "Ext.menu.Separator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": [
+                                    "{!isSuperAdmin}"
+                                ]
+                            },
+                            "name": "MySeparator1",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "0046da08-001f-4dd2-a1f9-c40189fe146b"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": [
+                                    "{!isSuperAdmin}"
+                                ],
+                                "itemId": "admincompanies",
+                                "text": "Edit Companies"
+                            },
+                            "name": "MyMenuItem5",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "54be40f0-ded4-4878-8d44-e3a113abf8d1"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": [
+                                    "{!isSuperAdmin}"
+                                ],
+                                "itemId": "adminusers",
+                                "text": "Edit Users"
+                            },
+                            "name": "MyMenuItem8",
+                            "configAlternates": {
+                                "hidden": "binding"
+                            },
+                            "designerId": "f362c78e-be04-476f-853a-d49e6d97cbbc"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAdminMenuClick",
+                                "implHandler": [
+                                    "this.redirectTo('admin/' + item.itemId);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onAdminMenuClick",
+                            "designerId": "c45650ae-37f9-4a3a-b4f4-cdce361fd538"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "text": "Logout"
+            },
+            "name": "MyButton2",
+            "designerId": "2a261377-c4f8-4ecc-a78e-0e5846fc6cf8",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onLogoutButtonClick",
+                        "implHandler": [
+                            "",
+                            "Ext.Msg.confirm(",
+                            "    \"Logout?\",",
+                            "    \"Are you sure that you want to log out?\",",
+                            "    function(b) {",
+                            "        if (b == 'yes') {",
+                            "            this.redirectTo(\"logout\");",
+                            "        }",
+                            "    },",
+                            "    this",
+                            ");"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onLogoutButtonClick",
+                    "designerId": "0d695476-2533-47d9-9569-9cfce2e063f6"
+                }
+            ]
+        }
+    ]
+}

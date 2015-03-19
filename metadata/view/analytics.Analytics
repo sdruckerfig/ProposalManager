@@ -1,0 +1,324 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "designer|userAlias": "analytics",
+        "designer|userClassName": "analytics.Analytics",
+        "height": 416,
+        "layout": "border",
+        "modal": true,
+        "requires": [
+            "Ext.chart.axis.sprite.Axis3D",
+            "Ext.chart.grid.VerticalGrid3D",
+            "Ext.chart.grid.HorizontalGrid3D"
+        ],
+        "title": "Production vs. Wins",
+        "width": 900
+    },
+    "name": "MyWindow",
+    "designerId": "717df09b-b4f4-4909-b1ed-ad24953dfb47",
+    "viewControllerInstanceId": "ebb39f23-c25a-4c89-9e9f-56d59fa7e8b7",
+    "viewModelInstanceId": "2cb0b6a8-ca77-4af6-a67b-395cab5cda8d",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsible": true,
+                "header": false,
+                "id": null,
+                "layout|flex": null,
+                "layout|region": "west",
+                "layout|split": true,
+                "store": [
+                    "{Analytics}"
+                ],
+                "title": "Statistics",
+                "width": 350
+            },
+            "name": "MyGridPanel2",
+            "configAlternates": {
+                "store": "binding"
+            },
+            "designerId": "8b2cd9a5-46eb-408d-8736-c6717b6aafe2",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "month",
+                        "flex": null,
+                        "text": "Month"
+                    },
+                    "name": "MyColumn3",
+                    "designerId": "b40badc0-599c-4e8d-8d21-a672fec25e92",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyTextField7",
+                            "designerId": "0f34aee9-87ab-4396-a35f-1e7e658c02ad"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "dataIndex": "wins",
+                        "flex": 1,
+                        "format": "0,0",
+                        "text": "Wins",
+                        "width": null
+                    },
+                    "name": "MyNumberColumn1",
+                    "designerId": "743b9b4b-0430-4171-9e1f-aa6cfcb6669f",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField1",
+                            "designerId": "3677e0df-3a78-43bb-a106-6b2a2a685a24"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "dataIndex": "losses",
+                        "flex": 1,
+                        "format": "0,0",
+                        "text": "Losses",
+                        "width": null
+                    },
+                    "name": "MyNumberColumn",
+                    "designerId": "61ab4356-748a-4290-8ad5-d869b19081eb"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "dataIndex": "total",
+                        "flex": 1,
+                        "format": "0,0",
+                        "text": "Total",
+                        "width": null
+                    },
+                    "name": "MyNumberColumn3",
+                    "designerId": "c769d3dd-94e9-464e-8aa1-292e45055f67",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField",
+                            "designerId": "5fd5bde5-e30d-4eec-bed9-b0e8991b4dac"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "dataIndex": "winpct",
+                        "flex": 1,
+                        "text": "Win %",
+                        "width": null
+                    },
+                    "name": "MyNumberColumn2",
+                    "designerId": "123d0ac9-723e-488f-8060-4b1b10a2a59e"
+                },
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable1",
+                    "designerId": "18a7868c-671b-411d-a5ba-cfd5517f44e9"
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyRowEditingPlugin1",
+                    "designerId": "06a0b5bf-7ed3-4df6-a954-dfba1f862e20"
+                }
+            ]
+        },
+        {
+            "type": "Ext.chart.CartesianChart",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "insetPadding": [
+                    "40 20 10 20"
+                ],
+                "layout|flex": 1,
+                "layout|region": "center",
+                "layout|split": false,
+                "store": [
+                    "{Analytics}"
+                ],
+                "theme": null,
+                "title": null
+            },
+            "name": "ColumnChart3D",
+            "configAlternates": {
+                "store": "binding"
+            },
+            "designerId": "4177c4bc-16a6-4402-bb4b-19a4f3b6f238",
+            "isBuiltIn": true,
+            "iconCls": "icon-column-chart",
+            "autoName": "ColumnChart3D",
+            "cn": [
+                {
+                    "type": "Ext.chart.axis.Category3D",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "grid": [
+                            "true"
+                        ],
+                        "position": "bottom",
+                        "title": [
+                            "Month"
+                        ]
+                    },
+                    "name": "My3DCategoryAxis",
+                    "designerId": "98ad4ead-eb82-40f7-8879-c6861977c945"
+                },
+                {
+                    "type": "Ext.chart.axis.Numeric3D",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "grid": [
+                            " {",
+                            "     odd: {",
+                            "         fillStyle: 'rgba(255, 255, 255, 0.06)'",
+                            "     },",
+                            "     even: {",
+                            "         fillStyle: 'rgba(0, 0, 0, 0.03)'",
+                            "     }",
+                            " }"
+                        ],
+                        "position": "left",
+                        "title": [
+                            "Proposals"
+                        ]
+                    },
+                    "name": "My3DNumericAxis",
+                    "designerId": "f990f3da-3ddc-49a8-b576-f5af5c0f110e"
+                },
+                {
+                    "type": "Ext.chart.series.Bar3D",
+                    "reference": {
+                        "name": "series",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "xField": "month",
+                        "yField": [
+                            "losses",
+                            "wins"
+                        ]
+                    },
+                    "name": "My3DBarSeries",
+                    "designerId": "5606e812-4d2e-4c46-a91f-41d24e93bc34"
+                },
+                {
+                    "type": "Ext.chart.Legend",
+                    "reference": {
+                        "name": "legend",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemSelector": null
+                    },
+                    "name": "MyLegend",
+                    "designerId": "fa457d51-5733-45c7-b24f-fb5a08dea891"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowClose",
+                "implHandler": [
+                    "this.redirectTo('main');"
+                ],
+                "name": "close",
+                "scope": "me"
+            },
+            "name": "onWindowClose",
+            "designerId": "74755b34-3e82-41e5-8031-58a8ab951ff5"
+        }
+    ]
+}

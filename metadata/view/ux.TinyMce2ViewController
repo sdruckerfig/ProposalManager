@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "uxtinymce2",
+        "designer|userClassName": "ux.TinyMce2ViewController"
+    },
+    "designerId": "9a4bf6a1-4653-442f-b7dd-c13f04e88991"
+}

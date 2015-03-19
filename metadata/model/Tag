@@ -1,0 +1,98 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Tag"
+    },
+    "name": "MyModel",
+    "designerId": "8a42fbc8-af41-45a2-9aeb-e28890b57463",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyField13",
+            "designerId": "6debea67-e147-4e7e-ae36-360d0dc7c9b7"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "text"
+            },
+            "name": "MyField14",
+            "designerId": "8e7a6d28-02f5-4033-be3d-813a044e0487"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "updateuser"
+            },
+            "name": "MyField15",
+            "designerId": "581ef1c2-7a1a-4b77-a5a2-fc721203e04d"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "m/d/Y H:i",
+                "name": "updatedate"
+            },
+            "name": "MyDate2",
+            "designerId": "44bc7994-4ec0-42eb-a91f-9d04fabbf11b"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "format": "json",
+                "url": "/rest/ProposalManager/Tags",
+                "withCredentials": true
+            },
+            "name": "MyRestProxy",
+            "designerId": "188cdc58-2004-4176-b276-16e17d0fc332",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "records"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "211e5c17-0bd0-474b-aa5e-70bf0d6eb08f"
+                }
+            ]
+        }
+    ]
+}
