@@ -274,7 +274,7 @@
     )
     values (
 
-      <cfif isdefined("rd.fullcontent")>
+      <cfif isdefined("rd.datedue")>
         <cfqueryparam cfsqltype="cf_sql_timestamp" value="#rd.datedue#">,
       </cfif>
 
