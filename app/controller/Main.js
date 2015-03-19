@@ -61,7 +61,7 @@ Ext.define('ProposalManager.controller.Main', {
     },
 
     control: {
-        "window": {
+        "asseteditor": {
             aftersave: 'onAssetAfterSave'
         }
     },

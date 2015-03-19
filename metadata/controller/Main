@@ -321,7 +321,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "window",
+                "designer|controlQuery": "asseteditor",
                 "designer|targetType": "asset.Editor",
                 "fn": "onAssetAfterSave",
                 "implHandler": [
