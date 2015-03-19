@@ -322,7 +322,7 @@
         <cfquery>
           insert into assetterm (assetid,termid)
           values (
-            <cfqueryparam  cfsqltype="cf_sql_numeric" value="#arguments.id#">,
+            <cfqueryparam  cfsqltype="cf_sql_numeric" value="#stresult.GENERATED_KEY#">,
             <cfqueryparam  cfsqltype="cf_sql_numeric" value="#thispk#">
           )
         </cfquery>
